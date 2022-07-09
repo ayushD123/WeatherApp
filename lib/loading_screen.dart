@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weatherapp/location_screen.dart';
+
 import 'networking.dart';
-import 'location.dart';
+
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'home.dart';
 import 'package:geolocator/geolocator.dart';
@@ -82,13 +82,17 @@ class _LoadingScreenState extends State<LoadingScreen> {
     //print(weatherdata['main']['temp']);
 
 
-    Navigator.push(
+    var cityname=await Navigator.push(
     context,MaterialPageRoute(builder:
     (context){
-    return Home(weatherdata);
+    return Home();
     })
     );
+    if(cityname!=null){
+
+    }
     // print(loc.lat);
+    print(cityname);
     // print(loc.long);
   }
 
